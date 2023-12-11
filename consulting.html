@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+    <!-- <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script> -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animation.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+	<script src="wow.min.js"></script>
+</head>
+    <body id="consulting-page">
+        <div class="hero-image">
+            <div class="topnav wow fadeInDown">
+                <div class="" id="scroll-menu">
+                    <div class="container">
+                        <div class="logo">
+							<a href="home.html">
+                                <img src="assets/blogo.png">
+							</a>
+                        </div>
+                        <ul class="menu" > 
+                            <li><a href="home.html">ホーム</a></li>
+                            <li><a href="aboutus.html">合同会社</a></li>
+                            <li><a href="consulting.html">運用アドバイザリー事業</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="container">
+                    <div class="logo">
+                        <a href="home.html">
+                            <img src="assets/blogo.png">
+                        </a>
+                    </div>
+                    <ul class="menu">
+                        <li><a href="home.html">ホーム</a></li>
+                        <li><a href="aboutus.html">合同会社</a></li>
+                        <li><a href="consulting.html">運用アドバイザリー事業</a></li>
+                    </ul>
+                    <div class="menuIcon">
+                        <span class="icon icon-bars"></span>
+                    </div>
+                    <div class="overlay-menu">
+                        <div>
+                        </div>
+                        <ul id="menu">
+                            <li><a href="home.html">ホーム</a></li>
+                            <li><a href="aboutus.html">合同会社</a></li>
+                            <li><a href="consulting.html">運用アドバイザリー事業</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="hero-text">
+                    <h1>運用アドバイザリー事業</h1>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="updating text-center">
+                <h1>更新中...</h1>
+            </div>
+        </div>
+        </div>
+        <div id="footer" class="">
+            <div class="container">
+				<div class="d-flex flex-column">
+					<div class="row">
+						<div class="col">
+							<h1>Contact Us</h1>
+						</div>
+						<div class="col" >
+							<h2 style="color:#fff;">STELLA合同会社</h2>
+							<p style="color:#fff">Email: info@stella-cons.com</p>
+							<p style="color:#fff">Tel: 080-4619-7326</p>
+						</div>
+						<div class="col">
+							<img src="assets/blogo.png" style="background-size: cover;">
+						</div>
+					</div>
+				</div>
+			</div>
+        </div>
+        <script>
+			var wow = new WOW({
+                offset:100,        // distance to the element when triggering the animation (default is 0)
+                mobile:false       // trigger animations on mobile devices (default is true)
+            });
+            wow.init();
+
+            let menuIcon = document.querySelector('.menuIcon');
+            let nav = document.querySelector('.overlay-menu');
+
+            menuIcon.addEventListener('click', () => {
+                if (nav.style.transform != 'translate(0%)') {
+                    nav.style.transform = 'translate(0%)';
+                    nav.style.transition = 'transform .2s ease-out';
+                } else {
+                    nav.style.transform = 'translate(-100%)';
+                    nav.style.transition = 'transform .2s ease-out';
+                }
+            })
+
+            let toggleIcon = document.querySelector('.menuIcon');
+
+            toggleIcon.addEventListener('click', () => {
+                if (toggleIcon.className != 'menuIcon toggle') {
+                   toggleIcon.className += ' toggle';
+                } else {
+                    toggleIcon.className = 'menuIcon';
+                }
+            });
+
+            window.onscroll = function() {scrollFunction()};
+
+            function scrollFunction() {
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    document.getElementById("scroll-menu").style.top = "0";
+                } else {
+                    document.getElementById("scroll-menu").style.top = "-70px";
+                }
+            }
+        </script>
+    </body>
+</html>
